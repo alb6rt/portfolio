@@ -1,4 +1,3 @@
-/*added border boxing*/
 *,
 *::before,
 *::after {
@@ -9,17 +8,15 @@
 
 /* css variables */
 :root {
-  --color-bg: #fafafa;
-  --color-text: #1a1a1a;
-  --color-text-secondary: #555;
-  --color-accent: #0057ff;
-  --color-border: #e0e0e0;
+  --color-bg: #0b0b0b;
+  --color-text: #f0f0f0;
+  --color-text-secondary: #888;
+  --color-accent: #c0c0c0;
+  --color-border: rgba(255, 255, 255, 0.1);
   --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'SF Mono', 'Fira Code', monospace;
 }
 
-
-/* going for a smooth navigation */
 html {
   scroll-behavior: smooth;
 }

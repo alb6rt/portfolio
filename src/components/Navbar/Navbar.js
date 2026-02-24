@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 
-// define nav links
+// define sections
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.navScrolled : ""}`}>
       <a href="#hero" className={styles.logo}>
-        albert.
+        Albert Luu
       </a>
       <ul className={styles.links}>
         {navLinks.map((link) => (

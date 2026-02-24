@@ -1,36 +1,336 @@
+/* ============================================
+   HERO
+   ============================================ */
+
 .hero {
   min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+  align-items: center;
+  padding: 4rem 4rem 4rem 22vw;
+  text-align: left;
+  gap: 3rem;
+  animation: heroFadeIn 1.2s ease-out both;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heroText {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+}
+
+.heroAnimation {
+  display: flex;
   align-items: center;
-  padding-top: 4rem;
+  justify-content: flex-start;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.hero p {
-  margin-top: 0.5rem;
-  font-size: 1.125rem;
+.greeting {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   color: var(--color-text-secondary);
+  margin-bottom: 1rem;
 }
+
+.name {
+  font-size: clamp(4rem, 10vw, 7rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+.tagline {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+}
+
+.cta {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.ctaPrimary {
+  padding: 0.75rem 2rem;
+  background-color: transparent;
+  color: var(--color-text);
+  border: 1px solid rgba(240, 240, 240, 0.7);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.ctaPrimary:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+  border-color: var(--color-text);
+}
+
+.ctaSecondary {
+  padding: 0.75rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.ctaSecondary:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text);
+}
+
+/* ============================================
+   SHARED STYLES
+   ============================================ */
 
 .section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem 2rem;
+  padding: 8rem 2rem;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.section h2 {
-  font-size: 2rem;
+.sectionTitle {
+  font-size: 0.7rem;
   font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 3rem;
+}
+
+/* ============================================
+   ABOUT
+   ============================================ */
+
+.bio {
+  font-size: 1.2rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  margin-bottom: 3.5rem;
+  max-width: 620px;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+.bio strong {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.skillsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.skillCategory {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 0.75rem;
+}
+
+.skillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skillTag {
+  padding: 0.35rem 0.9rem;
+  font-size: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+  color: var(--color-text-secondary);
+  background-color: transparent;
+  letter-spacing: 0.03em;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.skillTag:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text);
+}
+
+/* ============================================
+   EXPERIENCE
+   ============================================ */
+
+.experiencePlaceholder {
+  padding: 3rem;
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   PROJECTS
+   ============================================ */
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.projectCard {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.projectCard:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.projectThumbnail {
+  height: 180px;
+  background-color: #111;
+  background-image: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0.75rem;
+}
+
+.projectStatus {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.7rem;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+  color: var(--color-accent);
+}
+
+.projectTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  padding: 1rem 1.25rem 0.25rem;
+  color: var(--color-text);
+}
+
+.projectDescription {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  padding: 0 1.25rem;
+}
+
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.projectTag {
+  font-size: 0.65rem;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.04em;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+  padding: 4rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footerCopy {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.25);
   margin-bottom: 1rem;
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footerLinks a {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.2s ease;
+}
+
+.footerLinks a:hover {
+  color: var(--color-text);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 640px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 4rem 1.5rem;
+  }
+
+  .heroAnimation {
+    display: none;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section {
+    padding: 5rem 1.5rem;
+  }
+
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
 }
